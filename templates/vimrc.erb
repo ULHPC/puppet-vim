@@ -43,9 +43,9 @@ set lazyredraw                " don't redraw when don't have to
 set showmode
 set showcmd
 set nocompatible              " vim, not vi
-set autoindent smartindent    " auto/smart indent
-set smarttab                  " tab and backspace are smart
-set tabstop=2                 " 6 spaces
+" set autoindent smartindent    " auto/smart indent
+" set smarttab                  " tab and backspace are smart
+set softtabstop=4               "  spaces
 set shiftwidth=2
 set scrolloff=5               " keep at least 5 lines above/below
 set sidescrolloff=5           " keep at least 5 lines left/right
@@ -97,4 +97,3 @@ endif
 nmap <LocalLeader>tl :set list!<cr>
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
-
