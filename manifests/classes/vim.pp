@@ -61,8 +61,13 @@ class vim::common {
         ensure  => "${vim::ensure}",
     }
 
-    file { "${vim::params::configfile}":
-        ensure  => "${vim::ensure}",
+    $ensuredir = $vim::ensure ? {
+         'absent' => "${vim::ensure}",
+         default  => 'directory'
+    }
+
+    file { "${vim::params::configdir}":
+        ensure  => "${ensuredir}",
         owner   => "${vim::params::configfile_owner}",
         group   => "${vim::params::configfile_group}",
         mode    => "${vim::params::configfile_mode}",
@@ -70,10 +75,17 @@ class vim::common {
         require => Package['vim'],
     }
 
-    # $ensuredir = $vim::ensure ? {
-    #     'absent' => "${vim::ensure}",
-    #     default  => 'directory'
-    # }
+
+    file { "${vim::params::configfile}":
+        ensure  => "${vim::ensure}",
+        owner   => "${vim::params::configfile_owner}",
+        group   => "${vim::params::configfile_group}",
+        mode    => "${vim::params::configfile_mode}",
+        content => template("vim/vimrc.erb"),
+        require => [ Package['vim'], 
+                     File["${vim::params::configdir}"] 
+                   ]
+    }
 
     # file { "${vim::params::colorsdir}":
     #     ensure => "$ensuredir",

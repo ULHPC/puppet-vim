@@ -36,7 +36,12 @@ class vim::params {
     #######################################
     $packagename = $::operatingsystem ? {
         redhat  => 'vim-enhanced',
+        centos  => 'vim-enhanced',
         default => 'vim',
+    }
+
+    $configdir  = $::operatingsystem ? {
+        default => '/etc/vim/',
     }
 
     $configfile = $::operatingsystem ? {
