@@ -15,7 +15,7 @@
 
 include 'ULHPC/vim::params'
 
-$names = ["ensure", "protocol", "port", "packagename"]
+$names = ['ensure', 'protocol', 'port', 'packagename']
 
 notice("ULHPC/vim::params::ensure = ${ULHPC/vim::params::ensure}")
 notice("ULHPC/vim::params::protocol = ${ULHPC/vim::params::protocol}")

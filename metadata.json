@@ -25,5 +25,18 @@
       ]
     }
   ],
-  "tags": ["vi", "vim"]
+  "tags": [
+    "vi",
+    "vim"
+  ],
+  "classes": [
+    "vim",
+    "vim::common",
+    "vim::debian",
+    "vim::params",
+    "vim::redhat"
+  ],
+  "definitions": [
+
+  ]
 }

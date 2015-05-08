@@ -40,7 +40,7 @@ class vim($ensure = $vim::params::ensure) inherits vim::params
         debian, ubuntu:         { include vim::debian }
         redhat, fedora, centos: { include vim::redhat }
         default: {
-            fail("Module $module_name is not supported on $operatingsystem")
+            fail("Module ${module_name} is not supported on ${::operatingsystem}")
         }
     }
 }
@@ -57,34 +57,34 @@ class vim::common {
     require vim::params
 
     package { 'vim':
-        name    => "${vim::params::packagename}",
-        ensure  => "${vim::ensure}",
+        ensure => $vim::ensure,
+        name   => $vim::params::packagename,
     }
 
     $ensuredir = $vim::ensure ? {
-         'absent' => "${vim::ensure}",
-         default  => 'directory'
+        'absent' => $vim::ensure,
+        default  => 'directory'
     }
 
-    file { "${vim::params::configdir}":
-        ensure  => "${ensuredir}",
-        owner   => "${vim::params::configfile_owner}",
-        group   => "${vim::params::configfile_group}",
-        mode    => "${vim::params::configfile_mode}",
-        content => template("vim/vimrc.erb"),
+    file { $vim::params::configdir:
+        ensure  => $ensuredir,
+        owner   => $vim::params::configfile_owner,
+        group   => $vim::params::configfile_group,
+        mode    => $vim::params::configfile_mode,
+        content => template('vim/vimrc.erb'),
         require => Package['vim'],
     }
 
 
-    file { "${vim::params::configfile}":
-        ensure  => "${vim::ensure}",
-        owner   => "${vim::params::configfile_owner}",
-        group   => "${vim::params::configfile_group}",
-        mode    => "${vim::params::configfile_mode}",
-        content => template("vim/vimrc.erb"),
-        require => [ Package['vim'], 
-                     File["${vim::params::configdir}"] 
-                   ]
+    file { $vim::params::configfile:
+        ensure  => $vim::ensure,
+        owner   => $vim::params::configfile_owner,
+        group   => $vim::params::configfile_group,
+        mode    => $vim::params::configfile_mode,
+        content => template('vim/vimrc.erb'),
+        require =>  [ Package['vim'],
+                      File[$vim::params::configdir]
+                    ]
     }
 
     # file { "${vim::params::colorsdir}":

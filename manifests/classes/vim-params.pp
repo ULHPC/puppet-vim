@@ -25,9 +25,9 @@
 #
 class vim::params {
 
-    $ensure = $vim_ensure ? {
+    $ensure = $::vim_ensure ? {
         ''      => 'present',
-        default => "${vim_ensure}" 
+        default => $::vim_ensure
     }
 
     
