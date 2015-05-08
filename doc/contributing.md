@@ -1,6 +1,6 @@
 -*- mode: markdown; mode: auto-fill; fill-column: 80 -*-
 
-# Ulhpc/vim Puppet Module Developments
+# Vim Puppet Module Developments
 
 If you want to contribute to the code, you shall be aware of the way this module
 is organized.   
@@ -13,9 +13,9 @@ is organized.
            `-- files/            # Contains static files, which managed nodes can download
            `-- lib/              # custom facts/type/provider definitions
            `-- manifests/
-                `-- init.pp      # Main manifests file which defines the ULHPC/vim class 
+                `-- init.pp      # Main manifests file which defines the vim class 
                 `-- params.pp    # ULHPC/vim module variables 
-                `-- mydef.pp     # defines the ULHPC/vim::mydef  definition   
+                `-- mydef.pp     # defines the vim::mydef  definition   
            `-- templates/        # Module ERB template files
            `-- tests/            # Contains examples showing how to declare the module’s classes and defined type
            `-- spec/             # Contains rspec tests 
