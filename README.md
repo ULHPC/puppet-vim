@@ -19,8 +19,6 @@ Configure and manage vim
 This module implements the following elements: 
 
 * __classes__:     `vim`
-* __definitions__: 
-  * `vim::mydef`: 
  
 The various operations of this repository are piloted from a `Rakefile` which
 assumes that you have [RVM](https://rvm.io/) installed on your system.
@@ -39,22 +37,7 @@ See [manifests/params.pp](manifests/params.pp)
 
 ### class `vim`
 
-     include ' vim'
-
-### definition `vim::mydef`
-
-The definition `vim::mydef` provides ...
-This definition accepts the following parameters:
-
-* `$ensure`: default to 'present', can be 'absent'
-* `$content`: specify the contents of the directive as a string
-* `$source`: copy a file as the content of the directive.
-
-Example:
-
-      vim::mydef {'entry':
-           content => "entry\n",
-      }
+     include 'vim'
 
 ## Librarian-Puppet / R10K Setup
 
