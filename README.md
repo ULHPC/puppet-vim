@@ -1,6 +1,6 @@
 -*- mode: markdown; mode: auto-fill; fill-column: 80 -*-
 
-# Ulhpc/vim Puppet Module 
+# Vim Puppet Module 
 
 [![Puppet Forge](http://img.shields.io/puppetforge/v/ULHPC/vim.svg)](https://forge.puppetlabs.com/ULHPC/vim)
 [![License](http://img.shields.io/:license-gpl3.0-blue.svg)](LICENSE)
@@ -18,9 +18,9 @@ Configure and manage vim
 Configure and manage vim
 This module implements the following elements: 
 
-* __classes__:     `ULHPC/vim`
+* __classes__:     `vim`
 * __definitions__: 
-  * `ULHPC/vim::mydef`: 
+  * `vim::mydef`: 
  
 The various operations of this repository are piloted from a `Rakefile` which
 assumes that you have [RVM](https://rvm.io/) installed on your system.
@@ -37,13 +37,13 @@ See [manifests/params.pp](manifests/params.pp)
 
 ## Overview and Usage
 
-### class `ULHPC/vim`
+### class `vim`
 
-     include ' ULHPC/vim'
+     include ' vim'
 
-### definition `ULHPC/vim::mydef`
+### definition `vim::mydef`
 
-The definition `ULHPC/vim::mydef` provides ...
+The definition `vim::mydef` provides ...
 This definition accepts the following parameters:
 
 * `$ensure`: default to 'present', can be 'absent'
@@ -52,7 +52,7 @@ This definition accepts the following parameters:
 
 Example:
 
-      ULHPC/vim::mydef {'entry':
+      vim::mydef {'entry':
            content => "entry\n",
       }
 
