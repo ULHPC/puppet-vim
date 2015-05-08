@@ -15,7 +15,7 @@
 
 include 'vim::params'
 
-$names = ["ensure", "packagename", "configdir", "configfile", "configfile_mode", "configfile_owner", "configfile_group"]
+$names = ['ensure', 'packagename', 'configdir', 'configfile', 'configfile_mode', 'configfile_owner', 'configfile_group']
 
 notice("vim::params::ensure = ${vim::params::ensure}")
 notice("vim::params::packagename = ${vim::params::packagename}")
