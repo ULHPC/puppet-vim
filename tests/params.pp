@@ -13,16 +13,19 @@
 #
 #
 
-include 'ULHPC/vim::params'
+include 'vim::params'
 
-$names = ['ensure', 'protocol', 'port', 'packagename']
+$names = ["ensure", "packagename", "configdir", "configfile", "configfile_mode", "configfile_owner", "configfile_group"]
 
-notice("ULHPC/vim::params::ensure = ${ULHPC/vim::params::ensure}")
-notice("ULHPC/vim::params::protocol = ${ULHPC/vim::params::protocol}")
-notice("ULHPC/vim::params::port = ${ULHPC/vim::params::port}")
-notice("ULHPC/vim::params::packagename = ${ULHPC/vim::params::packagename}")
+notice("vim::params::ensure = ${vim::params::ensure}")
+notice("vim::params::packagename = ${vim::params::packagename}")
+notice("vim::params::configdir = ${vim::params::configdir}")
+notice("vim::params::configfile = ${vim::params::configfile}")
+notice("vim::params::configfile_mode = ${vim::params::configfile_mode}")
+notice("vim::params::configfile_owner = ${vim::params::configfile_owner}")
+notice("vim::params::configfile_group = ${vim::params::configfile_group}")
 
 #each($names) |$v| {
-#    $var = "ULHPC/vim::params::${v}"
+#    $var = "vim::params::${v}"
 #    notice("${var} = ", inline_template('<%= scope.lookupvar(@var) %>'))
 #}
