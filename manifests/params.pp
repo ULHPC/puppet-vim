@@ -25,12 +25,8 @@
 #
 class vim::params {
 
-    $ensure = $::vim_ensure ? {
-        ''      => 'present',
-        default => $::vim_ensure
-    }
+    $ensure ='present'
 
-    
     #### MODULE INTERNAL VARIABLES  #########
     # (Modify to adapt to unsupported OSes)
     #######################################
@@ -56,7 +52,7 @@ class vim::params {
     # $colorthemefile = $::operatingsystem ? {
     #     default => 'solarized.vim',
     # }
-    
+
     $configfile_mode = $::operatingsystem ? {
         default => '0644',
     }
@@ -70,4 +66,3 @@ class vim::params {
     }
 
 }
-
