@@ -3,7 +3,7 @@
 # Copyright:: Copyright (c) 2011 Sebastien Varrette
 # License::   GPLv3
 #
-# Time-stamp: <Wed 2011-08-31 16:34 svarrette>
+# Time-stamp: <Wed 2022-04-27 17:50:37 hcartiaux>
 # ------------------------------------------------------------------------------
 # = Class: vim::params
 #
@@ -33,6 +33,7 @@ class vim::params {
     $packagename = $::operatingsystem ? {
         redhat  => 'vim-enhanced',
         centos  => 'vim-enhanced',
+        rocky   => 'vim-enhanced',
         default => 'vim',
     }
 
