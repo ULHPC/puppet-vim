@@ -42,7 +42,7 @@ class vim::common {
         content => template('vim/vimrc.erb'),
         require =>  [ Package['vim'],
                       File[$vim::params::configdir]
-                    ]
+                    ],
     }
 
     # file { "${vim::params::colorsdir}":

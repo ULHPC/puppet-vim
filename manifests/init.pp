@@ -36,11 +36,11 @@ class vim($ensure = $vim::params::ensure) inherits vim::params
 {
     info("Configuring vim (ensure = ${ensure})")
 
-    case $::operatingsystem {
-        debian, ubuntu:                { include vim::common::debian }
-        redhat, fedora, centos, rocky: { include vim::common::redhat }
+    case $facts['os']['name'] {
+        'debian', 'ubuntu':                { include vim::common::debian }
+        'redhat', 'fedora', 'centos', 'rocky': { include vim::common::redhat }
         default: {
-            fail("Module ${module_name} is not supported on ${::operatingsystem}")
+            fail("Module ${module_name} is not supported on ${facts['os']['name']}")
         }
     }
 }
