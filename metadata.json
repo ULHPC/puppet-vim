@@ -1,6 +1,6 @@
 {
   "name": "ULHPC/vim",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "UL HPC Team",
   "mail": "hpc-sysadmins@uni.lu",
   "summary": "Configure and manage vim",
