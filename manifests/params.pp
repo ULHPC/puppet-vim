@@ -30,18 +30,18 @@ class vim::params {
     #### MODULE INTERNAL VARIABLES  #########
     # (Modify to adapt to unsupported OSes)
     #######################################
-    $packagename = $::operatingsystem ? {
-        redhat  => 'vim-enhanced',
-        centos  => 'vim-enhanced',
-        rocky   => 'vim-enhanced',
+    $packagename = $facts['os']['name'] ? {
+        'redhat'  => 'vim-enhanced',
+        'centos'  => 'vim-enhanced',
+        'rocky'   => 'vim-enhanced',
         default => 'vim',
     }
 
-    $configdir  = $::operatingsystem ? {
+    $configdir  = $facts['os']['name'] ? {
         default => '/etc/vim/',
     }
 
-    $configfile = $::operatingsystem ? {
+    $configfile = $facts['os']['name'] ? {
         default => '/etc/vim/vimrc',
     }
 
@@ -54,15 +54,15 @@ class vim::params {
     #     default => 'solarized.vim',
     # }
 
-    $configfile_mode = $::operatingsystem ? {
+    $configfile_mode = $facts['os']['name'] ? {
         default => '0644',
     }
 
-    $configfile_owner = $::operatingsystem ? {
+    $configfile_owner = $facts['os']['name'] ? {
         default => 'root',
     }
 
-    $configfile_group = $::operatingsystem ? {
+    $configfile_group = $facts['os']['name'] ? {
         default => 'root',
     }
 
