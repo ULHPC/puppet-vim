@@ -24,46 +24,44 @@
 # [Remember: No empty lines between comments and class definition]
 #
 class vim::params {
+  $ensure ='present'
 
-    $ensure ='present'
+  #### MODULE INTERNAL VARIABLES  #########
+  # (Modify to adapt to unsupported OSes)
+  #######################################
+  $packagename = $facts['os']['name'] ? {
+    'redhat'  => 'vim-enhanced',
+    'centos'  => 'vim-enhanced',
+    'rocky'   => 'vim-enhanced',
+    default => 'vim',
+  }
 
-    #### MODULE INTERNAL VARIABLES  #########
-    # (Modify to adapt to unsupported OSes)
-    #######################################
-    $packagename = $facts['os']['name'] ? {
-        'redhat'  => 'vim-enhanced',
-        'centos'  => 'vim-enhanced',
-        'rocky'   => 'vim-enhanced',
-        default => 'vim',
-    }
+  $configdir  = $facts['os']['name'] ? {
+    default => '/etc/vim/',
+  }
 
-    $configdir  = $facts['os']['name'] ? {
-        default => '/etc/vim/',
-    }
+  $configfile = $facts['os']['name'] ? {
+    default => '/etc/vim/vimrc',
+  }
 
-    $configfile = $facts['os']['name'] ? {
-        default => '/etc/vim/vimrc',
-    }
+  # # This directory is meant to hold color themes for vim
+  # $colorsdir = $::operatingsystem ? {
+  #     default => '/etc/vim/colors',
+  # }
+  # # The chosen color theme (in files)
+  # $colorthemefile = $::operatingsystem ? {
+  #     default => 'solarized.vim',
+  # }
 
-    # # This directory is meant to hold color themes for vim
-    # $colorsdir = $::operatingsystem ? {
-    #     default => '/etc/vim/colors',
-    # }
-    # # The chosen color theme (in files)
-    # $colorthemefile = $::operatingsystem ? {
-    #     default => 'solarized.vim',
-    # }
+  $configfile_mode = $facts['os']['name'] ? {
+    default => '0644',
+  }
 
-    $configfile_mode = $facts['os']['name'] ? {
-        default => '0644',
-    }
+  $configfile_owner = $facts['os']['name'] ? {
+    default => 'root',
+  }
 
-    $configfile_owner = $facts['os']['name'] ? {
-        default => 'root',
-    }
-
-    $configfile_group = $facts['os']['name'] ? {
-        default => 'root',
-    }
-
+  $configfile_group = $facts['os']['name'] ? {
+    default => 'root',
+  }
 }

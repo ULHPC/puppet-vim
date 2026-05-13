@@ -32,15 +32,14 @@
 #
 # [Remember: No empty lines between comments and class definition]
 #
-class vim($ensure = $vim::params::ensure) inherits vim::params
-{
-    info("Configuring vim (ensure = ${ensure})")
+class vim ($ensure = $vim::params::ensure) inherits vim::params {
+  info("Configuring vim (ensure = ${ensure})")
 
-    case $facts['os']['name'] {
-        'debian', 'ubuntu':                { include vim::common::debian }
-        'redhat', 'fedora', 'centos', 'rocky': { include vim::common::redhat }
-        default: {
-            fail("Module ${module_name} is not supported on ${facts['os']['name']}")
-        }
+  case $facts['os']['name'] {
+    'debian', 'ubuntu':                { include vim::common::debian }
+    'redhat', 'fedora', 'centos', 'rocky': { include vim::common::redhat }
+    default: {
+      fail("Module ${module_name} is not supported on ${facts['os']['name']}")
     }
+  }
 }
