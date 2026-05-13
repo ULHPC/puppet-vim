@@ -1,6 +1,6 @@
 {
   "name": "ULHPC-vim",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "author": "UL HPC Team",
   "summary": "Configure and manage vim",
   "license": "GPL-3.0",
