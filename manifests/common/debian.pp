@@ -7,5 +7,4 @@
 # = Class: vim::debian
 #
 # Specialization class for Debian systems
-class vim::common::debian inherits vim::common { }
-
+class vim::common::debian inherits vim::common {}

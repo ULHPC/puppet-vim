@@ -7,5 +7,4 @@
 # = Class: vim::redhat
 #
 # Specialization class for Redhat systems
-class vim::common::redhat inherits vim::common { }
-
+class vim::common::redhat inherits vim::common {}
