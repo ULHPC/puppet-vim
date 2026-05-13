@@ -9,7 +9,7 @@ Configure and manage vim
       Copyright (c) 2026 ULHPC Team <hpc-sysadmins@uni.lu>
 
 
-* [Online Project Page](https://github.com/ULHPC/puppet-vim)  -- [Sources](https://github.com/ULHPC/puppet-vim) -- [Issues](https://github.com/ULHPC/puppet-vim/issues)
+| [Online Project Page](https://github.com/ULHPC/puppet-vim) | [Sources](https://github.com/ULHPC/puppet-vim) | [Issues](https://github.com/ULHPC/puppet-vim/issues) |
 
 ## Synopsis
 
